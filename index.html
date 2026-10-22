@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f4f3ea">
+  <meta name="description" content="晴湾公园，一处可以听见微风、看见波光的交互式3D自然秘境。">
+  <title>晴湾公园 · Willow Park</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="experience" aria-label="晴湾公园三维互动场景">
+    <div id="scene" aria-label="可拖动环视的三维公园"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="晴湾公园，返回全景" id="brand-home">
+        <svg class="brand-mark" viewBox="0 0 44 44" fill="none" aria-hidden="true"><path d="M22 39V11M22 12C13 12 6 21 6 30M22 16C15 16 11 24 11 34M22 11C31 11 38 20 38 29M22 16C29 16 33 24 33 34M22 6C18 6 15 9 15 13M22 6C26 6 29 9 29 13M22 22C18 22 17 30 17 36M22 22C26 22 27 30 27 36" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <span class="brand-copy"><strong>晴湾公园<span class="brand-dot">.</span></strong><small>WILLOW PARK</small></span>
+      </a>
+      <nav class="topnav" aria-label="主导航">
+        <button class="nav-link active" id="nav-explore">自由漫游<span></span></button>
+        <button class="nav-link" id="nav-discover">发现美好<span></span></button>
+        <button class="nav-link" id="nav-about">公园手记<span></span></button>
+      </nav>
+      <div class="top-actions">
+        <span class="weather"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><span id="weather-label">晴 · 24°</span></span>
+        <span class="top-divider"></span>
+        <button class="icon-button" id="fullscreen" aria-label="进入全屏" title="全屏欣赏"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button>
+      </div>
+    </header>
+
+    <section class="intro" aria-label="欢迎来到晴湾公园">
+      <div class="eyebrow"><span class="tiny-line"></span> A LITTLE CLOSER TO NATURE</div>
+      <h1>把时间，<br>交给<span>自然。</span></h1>
+      <p>风经过树梢，光落进湖里。<br>在这里，每一刻都可以慢一点。</p>
+      <button class="explore-button" id="wander"><span>去湖边走走</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button>
+      <div class="intro-foot"><span class="live-dot"></span><span>一座为你醒来的公园</span></div>
+    </section>
+
+    <aside class="scene-note" aria-live="polite">
+      <span class="note-number" id="note-number">01 / 03</span>
+      <div><span class="note-label">此刻所在</span><strong id="location-name">晴湾湖畔</strong></div>
+      <svg viewBox="0 0 44 44" class="compass" aria-hidden="true"><circle cx="22" cy="22" r="20"/><path d="m22 8 4 14-4-3-4 3z" fill="currentColor"/><path d="m22 36 4-14-4 3-4-3z" opacity=".3" fill="currentColor"/><text x="22" y="6" text-anchor="middle">N</text></svg>
+    </aside>
+
+    <aside class="sound-invitation" id="sound-invitation">
+      <span class="sound-visual" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+      <div><strong>听见自然的声音</strong><span>戴上耳机，让心也散个步</span></div>
+      <button id="enable-sound" aria-label="开启音乐和自然音效"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7z" fill="currentColor" stroke="none"/></svg></button>
+    </aside>
+
+    <div class="bottom-area">
+      <div class="control-dock" aria-label="公园控制面板">
+        <div class="view-control" role="group" aria-label="选择观景视角">
+          <button class="view-button selected" data-view="overview" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 17 5-8 5 7 3-5 5 6M3 20h18"/><circle cx="17" cy="5" r="2"/></svg><span>湖畔全景</span></button>
+          <button class="view-button" data-view="pavilion" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 9-6 9 6H3Zm3 1v9m12-9v9M4 21h16M12 10v9"/></svg><span>湖心小亭</span></button>
+          <button class="view-button" data-view="dog" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 10-3-5 6 2m9 3 3-5-6 2M6 10c-3 6 0 10 6 10s9-4 6-10c-3-4-9-4-12 0Z"/><path d="m10 15 2 2 2-2m-6-3h.01M16 12h.01"/></svg><span>跟随小狗</span><span class="small-dot"></span></button>
+        </div>
+        <div class="dock-divider"></div>
+        <div class="time-control"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1 1m12 12 1 1M5 19l1-1M18 6l1-1"/></svg><label for="time-slider" id="time-label">午后</label><input type="range" id="time-slider" min="0" max="100" value="38" aria-label="时光：从清晨到日落"><span id="clock-label">14:30</span></div>
+        <div class="dock-divider sound-divider"></div>
+        <button class="sound-toggle" id="sound-toggle" aria-label="开启声音" aria-pressed="false"><svg class="speaker-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path class="sound-wave" d="M15 8c3 2 3 6 0 8m3-11c5 4 5 10 0 14"/><path class="sound-off" d="m16 10 5 5m0-5-5 5"/></svg><span id="sound-label">声音关闭</span></button>
+        <button class="icon-button settings-button" id="sound-settings" aria-label="调整声景" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v18M12 3v18M19 3v18M2 8h6m1 8h6m1-10h6"/></svg></button>
+      </div>
+      <div class="bottom-meta"><span class="interaction-hint"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="5" y="2" width="10" height="15" rx="5"/><path d="M10 5v3"/></svg><span>拖动环视<span class="hint-separator">/</span>滚轮缩放<span class="hint-separator">/</span>轻点湖面，泛起涟漪</span></span><span class="edition">MADE FOR SLOW MOMENTS <span>© 2026</span></span></div>
+    </div>
+
+    <section class="sound-popover" id="sound-popover" hidden aria-label="声景设置"><div class="popover-heading"><strong>专属你的声景</strong><span>THE SOUNDS OF CALM</span></div><div class="mix-choices"><button class="mix-choice selected" data-mix="balanced">自然与音乐</button><button class="mix-choice" data-mix="nature">纯净自然</button><button class="mix-choice" data-mix="music">轻柔音乐</button></div><label class="volume-row" for="volume"><span>音量</span><input id="volume" type="range" min="0" max="100" value="55"><span id="volume-value">55%</span></label></section>
+
+    <section class="discovery-panel" id="discovery-panel" hidden aria-label="发现公园"><div class="panel-heading"><span>值得停留的地方</span><button class="icon-button" id="close-discover" aria-label="关闭发现面板">×</button></div><button class="discovery-card" data-view="pavilion"><span class="discovery-art art-pavilion">亭</span><span><small>01 · 湖心的一点诗意</small><strong>听风小亭</strong><em>沿着石桥，走进水中央</em></span><b>↗</b></button><button class="discovery-card" data-view="dog"><span class="discovery-art art-dog">🐾</span><span><small>02 · 今日的快乐向导</small><strong>小狗「饼干」</strong><em>跟上它，快乐不需要理由</em></span><b>↗</b></button><button class="discovery-card" data-view="garden"><span class="discovery-art art-garden">✿</span><span><small>03 · 花开的时候</small><strong>四季花园</strong><em>找一张长椅，虚度一会儿</em></span><b>↗</b></button></section>
+
+    <dialog id="about-dialog"><button class="icon-button dialog-close" id="close-about" aria-label="关闭手记">×</button><div class="dialog-leaf">❧</div><div class="eyebrow">A NOTE FROM WILLOW PARK</div><h2>给生活，留一点空白。</h2><p>这里没有匆忙的目的地。只有轻轻晃动的柳枝、追着风跑的小狗，还有一片愿意收藏阳光的湖。</p><p>拖动视角寻找喜欢的风景，移动时光滑杆看日色流转。轻点水面，留下一圈涟漪；打开声音，听鸟鸣与钢琴在树间相遇。</p><div class="dialog-footer"><span>愿你在晴湾，找回自己的节奏。</span><span>晴湾公园 · 2026</span></div></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <div class="loading-screen" id="loading"><div class="loading-logo">晴湾<span>WILLOW PARK</span></div><div class="loading-line"><i id="loading-progress"></i></div><p id="loading-message">正在唤醒一座公园…</p><span class="loading-caption">一些美好，值得片刻等待</span></div>
+    <div id="error-screen" hidden><h2>这片风景需要 WebGL 支持</h2><p>请在开启硬件加速的现代浏览器中打开。</p><button onclick="location.reload()">重新进入</button></div>
+  </main>
+  <script src="vendor/three.min.js"></script>
+  <script src="life.js"></script>
+  <script src="audio.js"></script>
+  <script src="scene.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
